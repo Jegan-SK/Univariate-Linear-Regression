@@ -16,20 +16,32 @@ To implement univariate Linear Regression to fit a straight line using least squ
 ## Program
 ```
 import numpy as np
-X=np.array(eval(input()))
-Y=np.array(eval(input()))
-X_mean=np.mean(X)
-Y_mean=np.mean(Y)
-n=d=0
+
+X = np.array(eval(input("Enter X values as a list: ")))
+Y = np.array(eval(input("Enter Y values as a list: ")))  
+
+X_mean = np.mean(X)
+Y_mean = np.mean(Y)
+
+num = 0
+don = 0
 for i in range(len(X)):
-    n+=(X[i]-X_mean)*(Y[i]-Y_mean)
-    d+=(X[i]-X_mean)**2
-m=n/d
-b=Y_mean-m*X_mean
-print("Slope of the line,m=",m)
-print("Y intercept of the line,b=",b)
-Y_pred=m*X+b
-print(Y_pred)
+    num += (X[i] - X_mean) * (Y[i] - Y_mean)
+    don += (X[i] - X_mean) ** 2
+
+m = num / don
+c = Y_mean - m * X_mean
+
+print("Slope (m):", m)
+print("Intercept (c):", c)
+
+Y_pred = m * X + c
+print("Predicted Y values:", Y_pred)
+
+
+
+
+
 
 
 
@@ -37,7 +49,8 @@ print(Y_pred)
 
 ```
 ## Output
-<img width="411" height="208" alt="Screenshot (64)" src="https://github.com/user-attachments/assets/0b8a02e6-ecb3-4b18-a4e9-f745d47252ac" />
+<img width="667" height="132" alt="Screenshot 2025-10-21 111011" src="https://github.com/user-attachments/assets/cd8fe66d-09b2-47e7-a7b6-39990aaa1d5f" />
+
 
 
 ## Result
